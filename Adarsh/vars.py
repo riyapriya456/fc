@@ -9,20 +9,20 @@ load_dotenv()
 
 class Var(object):
     MULTI_CLIENT = False
-    API_ID = int(getenv('API_ID'))
-    API_HASH = str(getenv('API_HASH'))
-    BOT_TOKEN = str(getenv('BOT_TOKEN'))
-    name = str(getenv('name', 'filetolinkbot'))
+    API_ID = int(getenv('API_ID', "19491592"))
+    API_HASH = str(getenv('API_HASH', "01a4118f7aec3b2caece77a057fdd197"))
+    BOT_TOKEN = str(getenv('BOT_TOKEN', "5402132594:AAERydxCSHWqmU8g0mIat8Mymg1YqDTeI6U"))
+    name = str(getenv('name', 'File-To-Link'))
     SLEEP_THRESHOLD = int(getenv('SLEEP_THRESHOLD', '60'))
     WORKERS = int(getenv('WORKERS', '4'))
-    BIN_CHANNEL = int(getenv('BIN_CHANNEL'))
+    BIN_CHANNEL = int(getenv('BIN_CHANNEL', "-1001771518958"))
     PORT = int(getenv('PORT', 8080))
     BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
     PING_INTERVAL = int(environ.get("PING_INTERVAL", "1200"))  # 20 minutes
-    OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", "").split())  
+    OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", "5175000602").split())  
     NO_PORT = bool(getenv('NO_PORT', False))
-    APP_NAME = None
-    OWNER_USERNAME = str(getenv('OWNER_USERNAME'))
+    APP_NAME = file-to-stream
+    OWNER_USERNAME = str(getenv('OWNER_USERNAME', "rushidhar1999"))
     if 'DYNO' in environ:
         ON_HEROKU = True
         APP_NAME = str(getenv('APP_NAME'))
@@ -35,6 +35,7 @@ class Var(object):
         URL = "https://{}/".format(FQDN)
     else:
         URL = "http://{}/".format(FQDN)
-    DATABASE_URL = str(getenv('DATABASE_URL'))
+    DATABASE_URL = str(getenv('DATABASE_URL', 
+                             "mongodb+srv://github:github@cluster0.gwcnv4n.mongodb.net/?retryWrites=true&w=majority"))
     UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', None))
     BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001362659779")).split())) 
