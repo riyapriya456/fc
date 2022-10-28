@@ -42,7 +42,7 @@ async def follow_user(b,m):
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("FOLLOW ME", url=f"https://GITHUB.COM/S-Rushidhar-1-1999/")
+                                InlineKeyboardButton("IT'S ME", url=f"https://t.me/rushidhar1999/")
                             ]
                         ]
                     ),
