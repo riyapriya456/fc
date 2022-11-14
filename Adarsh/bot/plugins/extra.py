@@ -23,6 +23,9 @@ async def maintainers(b,m):
                         [
                             [
                                 InlineKeyboardButton("💻 Developer 💻", url=f"https://t.me/rushidhar1999/")
+                            ],
+                            [
+                                InlineKeyboardButton("SOURCE CODE", url="https://github.com/Adarsh-Goel/Filestreambot-pro/")
                             ]
                         ]
                     ),
@@ -43,6 +46,9 @@ async def follow_user(b,m):
                         [
                             [
                                 InlineKeyboardButton("IT'S ME", url=f"https://t.me/rushidhar1999/")
+                            ],
+                            [
+                                InlineKeyboardButton("SOURCE CODE", url="https://github.com/Adarsh-Goel/Filestreambot-pro/")
                             ]
                         ]
                     ),
