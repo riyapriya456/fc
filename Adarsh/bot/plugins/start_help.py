@@ -77,7 +77,7 @@ async def start(b, m):
     await StreamBot.send_photo(
         chat_id=m.chat.id,
         photo ="https://te.legra.ph/file/95db9bf6f91bd96d7a9f1.jpg",
-        caption =f'<b>Hi {m.from_user.mention(style="md")} !,\nI am Telegram File to Link Generator Bot with Channel support.\nSend me any file and get a direct download link and streamable link.!</b>\n\nPassword is -> <code>Rushidhar1999</code>',
+        caption =f'<b>Hi {m.from_user.mention(style="md")} !,\nI am Telegram File to Link Generator Bot with Channel support.\nSend me any file and get a direct download link and streamable link.!\n\nPASSWORD is -> </b><code>Rushidhar1999</code>.',
         reply_markup=InlineKeyboardMarkup(
             [
                 [InlineKeyboardButton("SOURCE CODE", url="https://github.com/Adarsh-Goel/Filestreambot-pro/")]
