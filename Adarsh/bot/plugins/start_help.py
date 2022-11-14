@@ -77,8 +77,14 @@ async def start(b, m):
     await StreamBot.send_photo(
         chat_id=m.chat.id,
         photo ="https://te.legra.ph/file/95db9bf6f91bd96d7a9f1.jpg",
-        caption =f'Hi {m.from_user.mention(style="md")}!,\nI am Telegram File to Link Generator Bot with Channel support.\nSend me any file and get a direct download link and streamable link.!',
-        reply_markup=buttonz)
+        caption =f'<b>Hi {m.from_user.mention(style="md")} !,\nI am Telegram File to Link Generator Bot with Channel support.\nSend me any file and get a direct download link and streamable link.!</b>\n\nPassword is -> <code>Rushidhar1999</code>',
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [InlineKeyboardButton("SOURCE CODE", url="https://github.com/Adarsh-Goel/Filestreambot-pro/")]
+               
+            ]
+        )
+    )
 
 
 @StreamBot.on_message((filters.command("help") | filters.regex('help📚')) & filters.private )
@@ -118,12 +124,12 @@ async def help_handler(bot, message):
         except Exception:
             await bot.send_message(
                 chat_id=message.chat.id,
-                text="__Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍᴇ__ [ADARSH GOEL](https://github.com/adarsh-goel/-pro/issues).",
+                text="__Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍᴇ__ [Rushidhar](https://telegram.me/rushidhar1999/).",
                 disable_web_page_preview=True)
             return
     await message.reply_text(
-        text="""<b> Send me any file or video i will give you streamable link and download link.</b>\n
-<b> I also support Channels, add me to you Channel and send any media files and see miracle✨ also send /list to know all commands""",
+        text="""<b>Send me any file or video i will give you streamable link and download link.</b>\n
+<b>I also support Channels, add me to you Channel and send any media files and see miracle✨ also send /list to know all commands.</b>""",
         
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
