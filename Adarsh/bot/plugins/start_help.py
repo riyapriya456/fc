@@ -6,7 +6,7 @@ logger = logging.getLogger(__name__)
 from Adarsh.bot.plugins.stream import MY_PASS
 from Adarsh.utils.human_readable import humanbytes
 from Adarsh.utils.database import Database
-from pyrogram import filters
+from pyrogram import filters, enums
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant
 from Adarsh.utils.file_properties import get_name, get_hash, get_media_file_size
@@ -45,7 +45,7 @@ async def start(b, m):
     if Var.UPDATES_CHANNEL != "None":
         try:
             user = await b.get_chat_member(Var.UPDATES_CHANNEL, m.chat.id)
-            if user.status == "kicked":
+            if user.status == enums.ChatMemberStatus.BANNED:
                 await b.send_message(
                     chat_id=m.chat.id,
                     text="__𝓢𝓞𝓡𝓡𝓨, 𝓨𝓞𝓤 𝓐𝓡𝓔 𝓐𝓡𝓔 𝓑𝓐𝓝𝓝𝓔𝓓 𝓕𝓡𝓞𝓜 𝓤𝓢𝓘𝓝𝓖 𝓜𝓔. 𝓒ᴏɴᴛᴀᴄᴛ ᴛʜᴇ 𝓓ᴇᴠᴇʟᴏᴘᴇʀ__\n\n  **𝙃𝙚 𝙬𝙞𝙡𝙡 𝙝𝙚𝙡𝙥 𝙮𝙤𝙪**",
@@ -98,7 +98,7 @@ async def help_handler(bot, message):
     if Var.UPDATES_CHANNEL != "None":
         try:
             user = await bot.get_chat_member(Var.UPDATES_CHANNEL, message.chat.id)
-            if user.status == "kicked":
+            if user.status == enums.ChatMemberStatus.BANNED:
                 await bot.send_message(
                     chat_id=message.chat.id,
                     text="<i>Sᴏʀʀʏ Sɪʀ, Yᴏᴜ ᴀʀᴇ Bᴀɴɴᴇᴅ FROM USING ᴍᴇ. Cᴏɴᴛᴀᴄᴛ ᴛʜᴇ Dᴇᴠᴇʟᴏᴘᴇʀ</i>",
