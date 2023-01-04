@@ -23,7 +23,6 @@ class Var(object):
     NO_PORT = bool(getenv('NO_PORT', False))
     APP_NAME = None
     OWNER_USERNAME = str(getenv('OWNER_USERNAME', "rushidhar1999"))
-    MY_PASS = str(getenv('MY_PASS', "Rushidhar1999"))
 #     ENV = True 
     if 'DYNO' in environ:
         ON_HEROKU = True
