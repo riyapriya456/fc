@@ -109,7 +109,8 @@ async def private_receive_handler(c: Client, m: Message):
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("✨ STREAM TO PLAYER ✨", url=f"https://stream.url2go.in/st?api=af5e38dfaf8b900b45335173d279b44d7ae4b2e9&url={online_link}")],
                 [InlineKeyboardButton("🖥 STREAM 🖥", url=stream_link)],
-                [InlineKeyboardButton('📥 DOWNLOAD 📥', url=online_link)]
+                [InlineKeyboardButton('📥 DOWNLOAD 📥', url=online_link)],
+                [InlineKeyboardButton("SOURCE CODE", url="https://github.com/Adarsh-Goel/Filestreambot-pro/")]
             ]) #Download Link
         )
     except FloodWait as e:
@@ -149,7 +150,8 @@ async def channel_receive_handler(bot, broadcast):
                 [
                     [InlineKeyboardButton("✨ STREAM TO PLAYER ✨", url=f"https://stream.url2go.in/st?api=af5e38dfaf8b900b45335173d279b44d7ae4b2e9&url={online_link}")],
                     [InlineKeyboardButton("🖥 STREAM 🖥", url=stream_link)],
-                    [InlineKeyboardButton('📥 DOWNLOAD 📥', url=online_link)]
+                    [InlineKeyboardButton('📥 DOWNLOAD 📥', url=online_link)],
+                    [InlineKeyboardButton("SOURCE CODE", url="https://github.com/Adarsh-Goel/Filestreambot-pro/")]
                 ]
             )
         )
