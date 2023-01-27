@@ -106,8 +106,11 @@ async def private_receive_handler(c: Client, m: Message):
             text=msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m))),
             quote=True,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🖥 STREAM 🖥", url=stream_link)], #Stream Link
-                                                [InlineKeyboardButton('📥 DOWNLOAD 📥', url=online_link)]]) #Download Link
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("✨ STREAM TO PLAYER ✨", url=f"https://stream.url2go.in/st?api=af5e38dfaf8b900b45335173d279b44d7ae4b2e9&url={online_link}")],
+                [InlineKeyboardButton("🖥 STREAM 🖥", url=stream_link)],
+                [InlineKeyboardButton('📥 DOWNLOAD 📥', url=online_link)]
+            ]) #Download Link
         )
     except FloodWait as e:
         print(f"Sleeping for {str(e.x)}s")
@@ -144,8 +147,9 @@ async def channel_receive_handler(bot, broadcast):
             message_id=broadcast.id,
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton("🖥STREAM ", url=stream_link),
-                     InlineKeyboardButton('Dᴏᴡɴʟᴏᴀᴅ📥', url=online_link)] 
+                    [InlineKeyboardButton("✨ STREAM TO PLAYER ✨", url=f"https://stream.url2go.in/st?api=af5e38dfaf8b900b45335173d279b44d7ae4b2e9&url={online_link}")],
+                    [InlineKeyboardButton("🖥 STREAM 🖥", url=stream_link)],
+                    [InlineKeyboardButton('📥 DOWNLOAD 📥', url=online_link)]
                 ]
             )
         )
